@@ -19,7 +19,15 @@ class Todo(db.Model):
 
 def index():
     if request.method=='POST':
-        pass
+        task_content=request.form['content']
+        new_task=Todo(content=task_content)
+
+        try:
+            db.session.add(new_task)
+            db.session.commit()
+            return redirect("/")
+        except:
+            return "There was an issue"
     else:
         return render_template("index.html")
 
