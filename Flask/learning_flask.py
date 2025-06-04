@@ -42,6 +42,8 @@ def delete(id):
         return redirect("/")
     except:
         return "There was a problem deleting the task"
+    
+@app.route("/update/<int:id>",methods=["POST","GET"])  #getting id from Todo class
 
 if __name__=="__main__":
     with app.app_context():
