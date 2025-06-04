@@ -31,9 +31,14 @@ def index():
     else:
         tasks=Todo.query.order_by(Todo.date_created).all()
         return render_template("index.html", tasks=tasks)
+    
+@app.route("/delete/<int:id>")  #getting id from Todo class
 
 if __name__=="__main__":
+    with app.app_context():
+        db.create_all()  # Creates the tables based on your models
     app.run(debug=True)
+
 
 
 
