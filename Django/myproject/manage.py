@@ -20,3 +20,15 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+'''
+To setup virtual environment
+   pip install virtualenv
+   python -m venv env
+   env\scripts\activate     or .\env\Scripts\Activate.ps1    
+   pip install django
+   django-admin startproject myproject
+
+To run
+   python manage.py runserver
+'''
