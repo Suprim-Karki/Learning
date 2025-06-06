@@ -28,7 +28,8 @@ To setup virtual environment
    env\scripts\activate     or .\env\Scripts\Activate.ps1    
    pip install django
    django-admin startproject myproject
-
+   python manage.py startapp myapp
+   
 To run
    python manage.py runserver
 '''
