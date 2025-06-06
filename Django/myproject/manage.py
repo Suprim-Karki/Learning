@@ -32,4 +32,12 @@ To setup virtual environment
    
 To run
    python manage.py runserver
+
+For templates
+'DIRS': [BASE_DIR,'templates'],
+
+
+For static files 
+import os
+STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 '''
