@@ -8,6 +8,19 @@ def index(request):
     feature1.id = 0
     feature1.name = 'Speed'
     feature1.details = 'We are very fast'
+
+    feature2 = Feature()
+    feature2.id = 1
+    feature2.name = 'Accurate'
+    feature2.details = 'We are very accurate'
+
+    feature3 = Feature()
+    feature3.id = 2
+    feature3.name = 'Reliability'
+    feature3.details = 'We are very reliable'
+
+    features=[feature1,feature2,feature3]
+
     return render(request,'index.html',{'feature':feature1})
 
 def counter(request):
