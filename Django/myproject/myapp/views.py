@@ -4,7 +4,11 @@ from .models import Feature
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    feature1 = Feature()
+    feature1.id = 0
+    feature1.name = 'Speed'
+    feature1.details = 'We are very fast'
+    return render(request,'index.html',{'feature':feature1})
 
 def counter(request):
     text=request.POST['text']  #words is the name of the input textbox 
