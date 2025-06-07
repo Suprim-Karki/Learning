@@ -5,11 +5,15 @@
 
 <h1>Input Your Text Below:</h1>
 <form method="POST" action="counter">
-    <!-- {% csrf_token %}     POST method will not run without csrf token which prevents from data being stolen -->
+    {% csrf_token %}    <!--  POST method will not run without csrf token which prevents from data being stolen -->
     <textarea name="text" rows="25", cols="50"></textarea><br>
     <input type="submit"/>
-</form>  
+</form>
 
-{%load static%}
+<!-- {%load static%}
 <link rel="stylesheet" href="{%static 'style.css'%}">
-<h1>Styling</h1>
+<h1>Styling</h1> -->
+
+<h1>Feature id: {{feature.id}}</h1>
+<h1>Feature name: {{feature.name}}</h1>
+<h1>Feature details: {{feature.details}}</h1>
