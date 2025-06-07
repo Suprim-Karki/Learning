@@ -40,4 +40,8 @@ For templates
 For static files 
 import os
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
+
+
+In installed apps in settings.py
+'myapp' at last
 '''
