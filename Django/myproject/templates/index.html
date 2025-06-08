@@ -19,5 +19,8 @@
 <h1>Feature id: {{feature.id}}</h1>
 <h1>Feature name: {{feature.name}}</h1>
 <h1>Feature details: {{feature.details}}</h1>
+{% if feature.name == 'Quick' %}
+<p>It says our site is quick</p>
+{%endif%}
 
 {%endfor%}
