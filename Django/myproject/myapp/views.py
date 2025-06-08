@@ -40,6 +40,10 @@ def register(request):
     password=request.POST['password']
     password2=request.POST['password2']
 
+    if username=="" or email=="" or password=="":
+        messages.info(request, 'Fill in all fields')
+        return render(request,'register.html')
+
     if password!=password2:
         messages.info(request, 'Passwords are not matching')
         return redirect('register')
