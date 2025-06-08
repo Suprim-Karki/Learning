@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Feature
 from django.contrib.auth.models import User, auth
@@ -33,8 +33,26 @@ def counter(request):
     return render(request,'counter.html',{'text':text,'no_of_words':no_of_words})
 
 def register(request):
+    if request.method!= 'POST':
+        return render(request,'register.html')
     username=request.POST['username']
     email=request.POST['email']
     password=request.POST['password']
     password2=request.POST['password2']
-    return render(request,'register.html')
+
+    if password!=password2:
+        messages.info(request, 'Passwords are not matching')
+        return redirect('register')
+    
+    if User.objects.filter(email=email).exists():
+        messages.info(request, 'Email already exists')
+        return redirect('register')
+    
+    if User.objects.filter(username=username).exists():
+        messages.info(request, 'Username already exists')
+        return redirect('register')
+    
+    user=User.objects.create_user(username=username,email=email, password=password)
+    user.save()
+
+
