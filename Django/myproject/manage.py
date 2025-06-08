@@ -34,14 +34,22 @@ To run
    python manage.py runserver
 
 For templates
-'DIRS': [BASE_DIR,'templates'],
+    'DIRS': [BASE_DIR,'templates'],
 
 
 For static files 
-import os
-STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
+    import os
+    STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
 
 In installed apps in settings.py
-'myapp' at last
+    'myapp' at last
+
+
+To save the features on models.py
+    python manage.py makemigrations
+    python manage.py migrate
+
+To create user and pw in /admin
+    python manage.py createsuperuser
 '''
