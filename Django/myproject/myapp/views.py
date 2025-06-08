@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Feature
+from django.contrib.auth.models import User, auth
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -31,4 +33,8 @@ def counter(request):
     return render(request,'counter.html',{'text':text,'no_of_words':no_of_words})
 
 def register(request):
+    username=request.POST['username']
+    email=request.POST['email']
+    password=request.POST['password']
+    password2=request.POST['password2']
     return render(request,'register.html')
