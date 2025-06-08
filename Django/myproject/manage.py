@@ -52,7 +52,6 @@ To save the features on models.py
 
 To create user and pw in /admin
     python manage.py createsuperuser
-    
+
 To register model
-    admin.site.register(Feature)
-'''
+    admin.site.register(Feature)'''
