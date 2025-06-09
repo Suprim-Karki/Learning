@@ -5,9 +5,14 @@
 
 {% if user.is_authenticated %}
 <h1>Welcome {{user.username}}</h1>
+<button><a href="">Log out</a></button>
 {% else %}
 <h1>Not logged in</h1>
+<button><a href="login">Log In</a></button>
+<button><a href="register">Sign Up</a></button>
 {% endif %}
+
+
 
 
 <h1>Input Your Text Below:</h1>
