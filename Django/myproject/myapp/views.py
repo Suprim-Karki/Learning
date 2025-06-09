@@ -59,4 +59,5 @@ def register(request):
     user=User.objects.create_user(username=username,email=email, password=password)
     user.save()
 
-
+def login(request):
+    return render(request,'login.html')
