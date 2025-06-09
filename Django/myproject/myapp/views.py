@@ -27,11 +27,6 @@ def index(request):
 
     return render(request,'index.html',{'features':features})
 
-def counter(request):
-    text=request.POST['text']  #words is the name of the input textbox 
-    no_of_words=len(text.split())
-    return render(request,'counter.html',{'text':text,'no_of_words':no_of_words})
-
 def register(request):
     if request.method!= 'POST':
         return render(request,'register.html')
@@ -79,3 +74,11 @@ def logout(request):
 
 def post(request, pk):
     return render(request, 'post.html', {'pk':pk})
+
+def counter(request):
+    # text=request.POST['text']  #words is the name of the input textbox 
+    # no_of_words=len(text.split())
+    # return render(request,'counter.html',{'text':text,'no_of_words':no_of_words})
+
+    posts=[1,2,3,'John','Cena']
+    return render(request,'counter.html',{'posts':posts})

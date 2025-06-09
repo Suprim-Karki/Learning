@@ -1,4 +1,8 @@
-You typed the following: <br>
+<!-- You typed the following: <br>
 {{text}}
 <br>
-Total no of words = {{no_of_words}}
+Total no of words = {{no_of_words}} -->
+
+{% for post in posts %}
+<a href="{% url 'post' post %}">{{post}}</a><br>
+{%endfor%}
