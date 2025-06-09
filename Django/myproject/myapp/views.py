@@ -72,3 +72,7 @@ def login(request):
     else:
         messages.info(request, 'Invalid credentials')
         return redirect('login')
+    
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
