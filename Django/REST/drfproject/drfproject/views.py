@@ -8,3 +8,4 @@ class Testview(APIView):
             'username':'admin',
             'number_of_years_active':'10'
         }
+        return Response(data)
