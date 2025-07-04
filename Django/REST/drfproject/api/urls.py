@@ -2,5 +2,5 @@ from django.urls import path
 from drfapp import views
 
 urlpatterns = [
-    path('')
+    path('get-transactions',views.get_transactions)
 ]

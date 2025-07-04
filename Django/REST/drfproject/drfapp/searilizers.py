@@ -6,6 +6,8 @@ class TransactionsSerializers(serializers.ModelSerializer):
         model=Transactions
         fields=[
             "title",
-            "amoune",
+            "amount",
             "transaction_type",
         ]
+
+        '''Use fields="__all__" to include all fields '''
