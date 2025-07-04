@@ -4,10 +4,19 @@ from .models import Transactions
 class TransactionsSerializers(serializers.ModelSerializer):
     class Meta:
         model=Transactions
-        fields=[
-            "title",
-            "amount",
-            "transaction_type",
-        ]
 
-        '''Use fields="__all__" to include all fields '''
+        '''To include fields you want'''
+        # fields=[
+        #     "title",
+        #     "amount",
+        #     "transaction_type",
+        # ]
+
+        '''To include all fields '''
+        # fields="__all__"
+
+        '''To exclude certain fields and include all others'''
+        exclude=[
+            'amount',
+            'transaction_type',
+        ]
