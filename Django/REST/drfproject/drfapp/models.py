@@ -10,4 +10,4 @@ class Transactions(models.Model):
     def save(self,*args,**kwargs):
         if self.transaction_type == "DEBIT":
             self.amount = self.amount* -1
-        return super().save(*args,**kwargs)
+        return super().save(self,*args,**kwargs)
