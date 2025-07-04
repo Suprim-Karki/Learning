@@ -6,17 +6,18 @@ class TransactionsSerializers(serializers.ModelSerializer):
         model=Transactions
 
         '''To include fields you want'''
-        # fields=[
-        #     "title",
-        #     "amount",
-        #     "transaction_type",
-        # ]
+        fields=[
+            "id",
+            "title",
+            "amount",
+            "transaction_type",
+        ]
 
         '''To include all fields '''
         # fields="__all__"
 
         '''To exclude certain fields and include all others'''
-        exclude=[
-            'amount',
-            'transaction_type',
-        ]
+        # exclude=[
+        #     'amount',
+        #     'transaction_type',
+        # ]
