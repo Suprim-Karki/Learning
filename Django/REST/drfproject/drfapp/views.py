@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from .searilizers import TransactionsSerializers
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
-
+from django.db.models import Sum
 
 @api_view(["GET","POST"])
 def get_transactions(request):
@@ -13,6 +13,7 @@ def get_transactions(request):
 
     return Response({
         "data":serializer.data
+        "total":queryset.aggregate.(total=Sum("amount"))["total"] or 0
     })
 
 
@@ -20,6 +21,7 @@ class TransactionsAPI(APIView):
     def get(self,request):     #for get method
         return Response({
             "message":"this is a get method"
+            "total":queryset.aggregate.(total=Sum("amount"))["total"] or 0
         })
     
     def post(self,request):     #for post method
