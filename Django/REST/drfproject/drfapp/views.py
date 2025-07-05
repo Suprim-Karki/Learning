@@ -26,3 +26,11 @@ class Transactions(APIView):
         return Response({
             "message":"this is a post method"
         })
+    def put(self,response):     #for put method
+        return Response({
+            "message":"this is a put method"
+        })
+    def patch(self,response):     #for patch method
+        return Response({
+            "message":"this is a patch method"
+        })
