@@ -40,6 +40,24 @@ class TransactionsAPI(APIView):
             "message":"this is a put method"
         })
     def patch(self,request):     #for patch method
+        data=request.data        
+
+        if not data.get("id"):
+            return Response({
+                "message":"data not updated",
+                "errors":"id is required"
+            })
+        
+        transactions=Transactions.objects.get(id = data.get("id"))
+        serializer = TransactionsSerializers(transactions,data=data,partial=True)
+
+        if not serializer.is_valid():     
+            return Response({
+                "message":"data not updated",
+                "errors": serializer.errors,
+            })
+        serializer.save()
         return Response({
-            "message":"this is a patch method"
+            "message":"data updated",
+            "data":serializer.data
         })
