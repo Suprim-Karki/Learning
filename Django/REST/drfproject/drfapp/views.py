@@ -3,9 +3,10 @@ from .models import Transactions
 from rest_framework.response import Response
 from .searilizers import TransactionsSerializers
 from rest_framework.decorators import api_view
+from rest_framework.views import APIView
 
 
-@api_view()
+@api_view(["GET","POST"])
 def get_transactions(request):
     queryset =Transactions.objects.all()
     serializer = TransactionsSerializers(queryset, many=True)
