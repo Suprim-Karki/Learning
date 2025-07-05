@@ -17,7 +17,12 @@ def get_transactions(request):
 
 
 class Transactions(APIView):
-    def get(self,response):     #for post method
+    def get(self,response):     #for get method
         return Response({
             "message":"this is a get method"
+        })
+    
+    def post(self,response):     #for post method
+        return Response({
+            "message":"this is a post method"
         })
