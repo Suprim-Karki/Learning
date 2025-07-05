@@ -17,20 +17,28 @@ def get_transactions(request):
 
 
 class TransactionsAPI(APIView):
-    def get(self,response):     #for get method
+    def get(self,request):     #for get method
         return Response({
             "message":"this is a get method"
         })
     
-    def post(self,response):     #for post method
+    def post(self,request):     #for post method
+        data=request.data        #to send data go to postman, post, body, raw, and input data
+        serializer = TransactionsSerializers(data=data)
+        if not serializer.is_valid():     #data will only go to server if is_valid() is called
+            return Response({
+                "message":"data not saved",
+                "errors": serializer.errors,
+            })
+
         return Response({
             "message":"this is a post method"
         })
-    def put(self,response):     #for put method
+    def put(self,request):     #for put method
         return Response({
             "message":"this is a put method"
         })
-    def patch(self,response):     #for patch method
+    def patch(self,request):     #for patch method
         return Response({
             "message":"this is a patch method"
         })
