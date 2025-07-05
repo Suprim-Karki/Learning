@@ -14,3 +14,10 @@ def get_transactions(request):
     return Response({
         "data":serializer.data
     })
+
+
+class Transactions(APIView):
+    def get(self,response):     #for post method
+        return Response({
+            "message":"this is a get method"
+        })
