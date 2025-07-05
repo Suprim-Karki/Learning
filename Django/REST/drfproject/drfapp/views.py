@@ -30,9 +30,10 @@ class TransactionsAPI(APIView):
                 "message":"data not saved",
                 "errors": serializer.errors,
             })
-
+        serializer.save()
         return Response({
-            "message":"this is a post method"
+            "message":"this is a post method",
+            "data":serializer.data
         })
     def put(self,request):     #for put method
         return Response({
