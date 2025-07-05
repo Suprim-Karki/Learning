@@ -61,3 +61,19 @@ class TransactionsAPI(APIView):
             "message":"data updated",
             "data":serializer.data
         })
+    
+    def delete(self,request):
+        data=request.data        
+
+        if not data.get("id"):
+            return Response({
+                "message":"data not deleted",
+                "errors":"id is required"
+            })
+        
+        transactions=Transactions.objects.get(id = data.get("id")).delete()
+
+        return Response({
+            "message":"data deleted",
+            "data":{},
+        })
